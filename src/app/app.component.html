@@ -1,6 +1,30 @@
-<nav>
-  <a routerLink="/">Todos</a>
-  <a routerLink="/completed">Completed</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container bg-white">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-center"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link todos fs-4"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Todos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link completed fs-4"
+            routerLink="/completed"
+            routerLinkActive="active"
+            >Completed</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>

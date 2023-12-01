@@ -10,6 +10,7 @@ export class TodosComponent implements OnInit {
   todos: string[] = [];
   completedTodos: string[] = [];
   todo: string = '';
+  loading: boolean = true
 
   constructor(private todosService: TodosService) {}
 
@@ -20,6 +21,7 @@ export class TodosComponent implements OnInit {
   loadTodos(): void {
     this.todosService.getTodos().then((todos) => {
       this.todos = todos;
+      this.loading = false
     });
 
     this.todosService.getCompletedTodos().then((completedTodos) => {

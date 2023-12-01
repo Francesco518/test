@@ -1,0 +1,9 @@
+<div *ngIf="loading; else completedTodosSection">Task Loading...</div>
+<ng-template #completedTodosSection>
+  <ul>
+    <li *ngFor="let completedTodo of completedTodos">
+      {{ completedTodo }}
+    </li>
+  </ul>
+  <div *ngIf="completedTodos.length === 0">OOOPS there are no tasks</div>
+</ng-template>
